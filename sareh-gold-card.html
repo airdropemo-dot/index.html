@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>طلای ساره | SAREH GOLD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #121010;
+    --bg-2: #1a1613;
+    --panel: #1c1815;
+    --panel-line: #2d2620;
+    --gold: #c6a15b;
+    --gold-bright: #e6c988;
+    --gold-dim: #8a713f;
+    --ink: #f3ecdd;
+    --ink-soft: #cdc3ae;
+    --ink-mute: #948a76;
+  }
+  /* This card carries a deliberate brand identity (deep charcoal + antique gold),
+     so it holds its palette regardless of viewer theme. */
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { color-scheme: dark; }
+  }
+  :root[data-theme="dark"] { color-scheme: dark; }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: radial-gradient(120% 90% at 50% -10%, #241d16 0%, var(--bg) 46%, #0c0a09 100%);
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: 'Vazirmatn', Tahoma, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 18px 56px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 420px;
+    animation: rise 0.7s cubic-bezier(.2,.7,.25,1) both;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .card { animation: none; }
+  }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .emblem {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 22px;
+    display: block;
+  }
+
+  .brand {
+    text-align: center;
+    margin-bottom: 6px;
+  }
+  .brand-fa {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: 0.5px;
+    margin: 0;
+  }
+  .brand-en {
+    font-family: 'Cormorant Garamond', 'Vazirmatn', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--gold);
+    letter-spacing: 3px;
+    margin: 4px 0 0;
+    direction: ltr;
+  }
+
+  .tagline {
+    text-align: center;
+    color: var(--ink-soft);
+    font-size: 14.5px;
+    line-height: 1.9;
+    max-width: 300px;
+    margin: 22px auto 4px;
+  }
+  .subtagline {
+    text-align: center;
+    color: var(--gold-dim);
+    font-size: 12.5px;
+    margin: 0 auto 30px;
+  }
+
+  .ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto 30px;
+    color: var(--gold-dim);
+  }
+  .ornament svg { width: 12px; height: 12px; }
+  .ornament .rule {
+    width: 46px;
+    height: 1px;
+    background: linear-gradient(to var(--rule-dir, right), transparent, var(--panel-line) 60%);
+  }
+  .ornament .rule.left { --rule-dir: left; }
+
+  .section-label {
+    color: var(--ink-mute);
+    font-size: 12px;
+    margin: 26px 4px 10px;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  a.row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--panel);
+    border: 1px solid var(--panel-line);
+    border-radius: 14px;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+  a.row:hover, a.row:focus-visible {
+    border-color: var(--gold-dim);
+    background: #221c17;
+  }
+  a.row:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+  .row-icon {
+    flex: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: #262019;
+    border: 1px solid var(--panel-line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .row-icon svg { width: 18px; height: 18px; stroke: var(--gold-bright); fill: none; }
+
+  .row-text { flex: 1; min-width: 0; }
+  .row-title { font-size: 14.5px; font-weight: 600; color: var(--ink); }
+  .row-sub { font-size: 12px; color: var(--ink-mute); margin-top: 2px; }
+
+  .row-arrow { flex: none; color: var(--ink-mute); }
+  .row-arrow svg { width: 15px; height: 15px; }
+
+  .call-row {
+    display: flex;
+    gap: 10px;
+  }
+  .call-btn {
+    flex: 1;
+    text-align: center;
+    background: var(--panel);
+    border: 1px solid var(--panel-line);
+    border-radius: 14px;
+    padding: 13px 8px;
+    text-decoration: none;
+    color: var(--ink);
+    font-size: 13.5px;
+    direction: ltr;
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+  .call-btn:hover, .call-btn:focus-visible {
+    border-color: var(--gold-dim);
+    background: #221c17;
+  }
+  .call-btn span { display: block; color: var(--ink-mute); font-size: 11px; margin-top: 3px; direction: rtl; }
+
+  .qr-wrap {
+    margin-top: 34px;
+    background: var(--panel);
+    border: 1px solid var(--panel-line);
+    border-radius: 16px;
+    padding: 22px;
+    text-align: center;
+  }
+  .qr-wrap p {
+    color: var(--ink-soft);
+    font-size: 13px;
+    margin: 0 0 14px;
+  }
+  #qrcode {
+    display: inline-block;
+    padding: 10px;
+    background: var(--ink);
+    border-radius: 10px;
+    line-height: 0;
+  }
+  #qrcode img, #qrcode canvas, #qrcode table { border-radius: 4px; }
+  .qr-fallback {
+    color: var(--gold);
+    font-size: 12.5px;
+    word-break: break-all;
+    direction: ltr;
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 34px;
+    color: var(--ink-mute);
+    font-size: 11px;
+    letter-spacing: 2px;
+    direction: ltr;
+  }
+</style>
+</head>
+<body>
+  <main class="card">
+    <svg class="emblem" viewBox="0 0 64 64" fill="none">
+      <path d="M20 24 L32 12 L44 24 L32 52 Z" stroke="#c6a15b" stroke-width="1.4" stroke-linejoin="round"/>
+      <path d="M20 24 L44 24" stroke="#c6a15b" stroke-width="1.4"/>
+      <path d="M26 24 L32 12 L38 24 L32 52 Z" stroke="#8a713f" stroke-width="1" stroke-linejoin="round"/>
+    </svg>
+
+    <div class="brand">
+      <p class="brand-fa">طلای ساره</p>
+      <p class="brand-en">SAREH GOLD</p>
+    </div>
+
+    <p class="tagline">زیبایی، وقتی ارزشمند می‌شود که انتخاب شما باشد</p>
+    <p class="subtagline">درخشش اصیل، انتخابی مطمئن</p>
+
+    <div class="ornament" aria-hidden="true">
+      <span class="rule left"></span>
+      <svg viewBox="0 0 24 24"><path d="M12 2 L15 9 L22 12 L15 15 L12 22 L9 15 L2 12 L9 9 Z" fill="#8a713f"/></svg>
+      <span class="rule"></span>
+    </div>
+
+    <div class="links">
+
+      <a class="row" href="https://instagram.com/Sarehgold_" target="_blank" rel="noopener">
+        <span class="row-icon">
+          <svg viewBox="0 0 24 24" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="#e6c988" stroke="none"/></svg>
+        </span>
+        <span class="row-text">
+          <span class="row-title">اینستاگرام</span>
+          <span class="row-sub">مشاهده جدیدترین محصولات و کالکشن‌ها</span>
+        </span>
+        <span class="row-arrow"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" fill="none"><path d="M15 5 L9 12 L15 19"/></svg></span>
+      </a>
+
+      <a class="row" href="https://t.me/sare_gold" target="_blank" rel="noopener">
+        <span class="row-icon">
+          <svg viewBox="0 0 24 24" stroke-width="1.6"><path d="M21 4 L2.5 11.3 L9 13.5 M21 4 L15.5 20 L9 13.5 M21 4 L9 13.5"/></svg>
+        </span>
+        <span class="row-text">
+          <span class="row-title">کانال تلگرام</span>
+          <span class="row-sub">محصولات، قیمت‌ها و اطلاع‌رسانی</span>
+        </span>
+        <span class="row-arrow"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" fill="none"><path d="M15 5 L9 12 L15 19"/></svg></span>
+      </a>
+
+      <a class="row" href="https://eitaa.com/sarehgold" target="_blank" rel="noopener">
+        <span class="row-icon">
+          <svg viewBox="0 0 24 24" stroke-width="1.6"><path d="M4 5h16v10H9l-4 4V15H4z"/></svg>
+        </span>
+        <span class="row-text">
+          <span class="row-title">کانال ایتا</span>
+          <span class="row-sub">اطلاع‌رسانی و ارتباط در پیام‌رسان ایتا</span>
+        </span>
+        <span class="row-arrow"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" fill="none"><path d="M15 5 L9 12 L15 19"/></svg></span>
+      </a>
+
+      <a class="row" href="https://wa.me/989302612162" target="_blank" rel="noopener">
+        <span class="row-icon">
+          <svg viewBox="0 0 24 24" stroke-width="1.6"><path d="M6 18l1-3.5A7 7 0 1 1 10 19z"/><path d="M9 10c0 3 2 5 5 5"/></svg>
+        </span>
+        <span class="row-text">
+          <span class="row-title">واتس‌اپ</span>
+          <span class="row-sub">مشاوره و ارتباط مستقیم برای سفارش</span>
+        </span>
+        <span class="row-arrow"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" fill="none"><path d="M15 5 L9 12 L15 19"/></svg></span>
+      </a>
+
+    </div>
+
+    <p class="section-label">تماس با ما</p>
+    <div class="call-row">
+      <a class="call-btn" href="tel:09904186890">09904186890<span>تماس مستقیم</span></a>
+      <a class="call-btn" href="tel:09302612162">09302612162<span>واتس‌اپ / تماس</span></a>
+    </div>
+
+    <div class="qr-wrap">
+      <p>اسکن کن و این کارت رو ذخیره کن</p>
+      <div id="qrcode"></div>
+      <p class="qr-fallback" id="qr-fallback" style="display:none;"></p>
+    </div>
+
+    <footer>SAREH GOLD · JEWELRY</footer>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script>
+    (function () {
+      var url = window.location.href;
+      var target = document.getElementById('qrcode');
+      var fallback = document.getElementById('qr-fallback');
+      try {
+        if (window.QRCode) {
+          new QRCode(target, {
+            text: url,
+            width: 168,
+            height: 168,
+            colorDark: '#121010',
+            colorLight: '#f3ecdd',
+            correctLevel: QRCode.CorrectLevel.M
+          });
+        } else {
+          throw new Error('QRCode lib unavailable');
+        }
+      } catch (e) {
+        target.style.display = 'none';
+        fallback.style.display = 'block';
+        fallback.textContent = url;
+      }
+    })();
+  </script>
+</body>
+</html>
